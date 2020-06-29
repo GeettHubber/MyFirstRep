@@ -6,35 +6,24 @@ using System.Threading.Tasks;
 
 namespace Konichi_wa
 {
-    interface IHero_Super_Sayan
+    internal class TurnBlonde : IHero_Super_Sayan
     {
-        int rekimas {get; set; }
-        string raumenys { get; set; }
-        void wtf();
-    }
-    class TurnBlonde : IHero_Super_Sayan
-    {
-        int rekimas { get; set; }
+        private int rekimas { get; set; }
         int IHero_Super_Sayan.rekimas { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        string raumenys { get; set; }
+        private string raumenys { get; set; }
         string IHero_Super_Sayan.raumenys { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public void wtf()
         {
-                Console.WriteLine(" ");
+            Console.WriteLine(" ");
         }
-}
-    interface IVillain_Freeza
-    {
-        int rekimasNera { get; set; }
-        string raumenysLabaiMaziLolNoob { get; set; }
-        void whaaaat();
     }
-    class Morph : IVillain_Freeza
+
+    internal class Morph : IVillain_Freeza
     {
-        int rekimasNera { get; set; }
+        private int rekimasNera { get; set; }
         int IVillain_Freeza.rekimasNera { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        string raumenysLabaiMaziLolNoob { get; set; }
+        private string raumenysLabaiMaziLolNoob { get; set; }
         string IVillain_Freeza.raumenysLabaiMaziLolNoob { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public void whaaaat()
@@ -42,9 +31,21 @@ namespace Konichi_wa
             Console.WriteLine(" ");
         }
     }
-    class Program
+
+    internal class Kakaroto : IHero_Super_Sayan
     {
-        static void Main(string[] args)
+        public int rekimas { get { return int.MaxValue; } set { } }
+        public string raumenys { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        public void wtf()
+        {
+            Console.WriteLine("Saitama is op");
+        }
+    }
+
+    internal class Program
+    {
+        private static void Main(string[] args)
         {
         }
     }
